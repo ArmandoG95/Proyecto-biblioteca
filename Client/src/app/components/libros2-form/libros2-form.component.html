@@ -1,0 +1,117 @@
+
+
+<div class="container">
+    <br>
+    <div class="card text-white bg-secondary mb-3">
+        <h2 class="card-header text-center">Libro</h2>
+        <div class="card-body">
+            <form id="Libro">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Nombre del
+                                libro</label>
+                            <input class="form-control" type="text" name="libro.Nombre_Libro"
+                                placeholder="Nombre del libro" [(ngModel)]="libro.Nombre_Libro" />
+                        </div>
+
+
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Imagen</label>
+                            <input class="form-control" type="text" name="libro.Imagen"
+                                placeholder="Url:" [(ngModel)]="libro.Imagen" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Ingresar el
+                                ISBN</label>
+                            <input class="form-control" type="text" name="libro.ISBN" placeholder="ISBN"
+                                [(ngModel)]="libro.ISBN" />
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Ingresar el
+                                autor</label>
+                            <select class="form-control" name="libro.Id_Autor" [(ngModel)]="libro.Id_Autor">
+                                <option value="" selected disabled>Seleccionar el autor</option>
+                                <option *ngFor="let autor of autores" value={{autor.Id_Autor}}>{{autor.Nombre}}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Ingresar el número
+                                de
+                                páginas</label>
+                            <input class="form-control" type="number" name="libro.Numero_Paginas"
+                                placeholder="Número de páginas" [(ngModel)]="libro.Numero_Paginas" />
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Ingresar la
+                                editorial</label>
+                            <select class="form-control" name="libro.Id_Editorial" [(ngModel)]="libro.Id_Editorial">
+                                <option selected disabled>Seleccionar editorial</option>
+                                <option *ngFor="let editorial of editoriales" value={{editorial.Id_Editorial}}>
+                                    {{editorial.Editorial}}</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Ingresar la
+                                edición</label>
+                            <input class="form-control" type="text" name="libro.Edicion" placeholder="Edicion"
+                                [(ngModel)]="libro.Edicion" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Ingresa el género
+                                literario</label>
+                            <select class="form-control" name="libro.Id_Genero_Literario"
+                                [(ngModel)]="libro.Id_Genero_Literario">
+                                <option selected disabled>Seleccionar el género literario</option>
+                                <option *ngFor="let genero_literario of generos_literarios" value={{genero_literario.Id_Genero_Literario}}>
+                                    {{genero_literario.Genero_Literario}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Fecha de
+                                publicación</label>
+                            <input class="form-control" type="date" name="libro.Fecha_Publicacion"
+                                [(ngModel)]="libro.Fecha_Publicacion" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Sinopsis</label>
+                            <input class="form-control" type="text" name="libro.Sinopsis" placeholder="Sinopsis"
+                                [(ngModel)]="libro.Sinopsis" />
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Ingresar el tipo
+                                de
+                                tapa</label>
+                            <select class="form-control" name="libro.Id_Tipo_Tapa" [(ngModel)]="libro.Id_Tipo_Tapa">
+                                <option selected disabled>Seleccionar el tipo de tapa</option>
+                                <option *ngFor="let tipo_tapa of tipos_tapas" value={{tipo_tapa.id_tipo_tapa}}>{{tipo_tapa.Tipo_Tapa}}</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <br>
+                    <button id="Libro" class="btn btn-outline-success btn-sm"
+                        (click)="edit? updateLibro(): saveNewLibro()">Guardar</button> |
+                    <a class="btn btn-outline-danger btn-sm" routerLink="/Libros2" routerLinkActive="Active">Cancelar</a>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<br>
+
+<h2 class="text-center">Nacionaliades</h2>
+
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nacionalidad</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-light" *ngFor="let nacionalidad of nacionalidades">
+        <tr>
+            <td>{{nacionalidad.Nacionalidad}}</td>
+            <td>
+                <a class="btn btn-secondary btn-sm" [routerLink]="['/Nacionalidades/edit/',nacionalidad.Id_Nacionalidad]">Editar</a> |
+
+                <button class="btn btn-danger btn-sm" (click)="deleteNacionalidad(nacionalidad.Id_Nacionalidad)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+    <br>
+    <a class="btn btn-primary" routerLink="/Nacionalidades/add">Agregar Nacion</a>
+</table>

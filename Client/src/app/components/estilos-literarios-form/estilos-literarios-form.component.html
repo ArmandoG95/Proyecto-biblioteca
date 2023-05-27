@@ -1,0 +1,19 @@
+<div class="col-md-4-offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <p>Estilo Literario: </p>
+                <div class="form-group">
+                    <input type="text" name="Estilo_Literario" [(ngModel)]="estiloLiterario.Estilo_Literario" placeholder="Enter Estilo Literario" class="form-control" autofocus>
+                </div>
+                <br>
+                <button class="btn btn-success btn-block" (click)="edit? update(): saveNewEstiloLiterario()" routerLink="/EstilosLiterarios">Save</button>
+            </form>
+        </div>
+    </div>    
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+        <h1>{{estiloLiterario.Estilo_Literario}}</h1>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="col-md-4-offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <p>Autor: </p>
+                    <select name="Id_Autor" [(ngModel)]="premioAutor.Id_Autor" >
+                        <option *ngFor="let autor of autores" value={{autor.Id_Autor}}>
+                            {{autor.Nombre}} {{autor.Apellido_Paterno}} {{autor.Apellido_Materno}}
+                        </option>
+                    </select>
+                </div>
+                <br>
+                <div class="form-group">
+                    <p>Premio: </p>
+                    <select name="Id_Premio" [(ngModel)]="premioAutor.Id_Premio" >
+                        <option *ngFor="let premio of premios" value={{premio.Id_Premio}}>
+                            {{premio.Premio}}
+                        </option>
+                    </select>
+                </div>
+                <br>
+                <button class="btn btn-success btn-block" (click)="saveNewAutor()" routerLink="/PremiosAutores">Save</button>
+            </form>
+        </div>
+    </div>    
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+    </div>
+</div>

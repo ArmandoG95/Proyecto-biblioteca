@@ -1,0 +1,31 @@
+<br>
+
+<h2 class="text-center">Autores</h2>
+
+<p><a class="btn btn-outline-primary btn-sm" routerLink="/Autores/add" routerLinkActive="Active">Nuevo Autor</a></p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido Paterno</th>
+            <th>Apellido Materno</th>
+            <th>Pseudonimo</th>
+            <th>Nacionalidad</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-light" *ngFor="let autor of autores">
+        <tr>
+            <td>{{autor.Nombre}} </td>
+            <td>{{autor.Apellidp_Paterno}}</td>
+            <td>{{autor.Apellido_Materno}}</td>
+            <td>{{autor.Pseudonimo}}</td>
+            <td>{{autor.Nacionalidad}}</td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm" [routerLink]="['/Autores/edit/', autor.Id_Autor]">Editar</a> |
+                <button class="btn btn-outline-danger btn-sm" (click)="delete(autor.Id_Autor)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

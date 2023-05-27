@@ -1,0 +1,36 @@
+<br>
+
+<h2 class="text-center">Libros</h2>
+
+<p><a class="btn btn-outline-primary btn-sm" routerLink="/libros/add" routerLinkActive="Active">Nuevo libro</a></p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Libro</th>
+            <th>Autor</th>
+            <th>Editorial</th>
+            <th>Edición</th>
+            <th>Genero literario</th>
+            <th>Tipo de tapa</th>
+            <th>Lenguaje</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-light" *ngFor="let libro of libros">
+        <tr>
+            <td>{{libro.Nombre_Libro}}</td>
+            <td>{{libro.Nombre}}</td>
+            <td>{{libro.Editorial}}</td>
+            <td>{{libro.Edicion}}</td>
+            <td>{{libro.Genero_Literario}}</td>
+            <td>{{libro.Tipo_Tapa}}</td>
+            <td>{{libro.Lenguaje}}</td>
+            <td>
+                <a class="btn btn-outline-info btn-sm" [routerLink]="['/libros/detail', libro.Id_Libro]">Detalle</a> |
+                <!--<a class="btn btn-outline-primary btn-sm" [routerLink]="['/libros/edit', libro.Id_Libro]">Editar</a> | -->
+                <button class="btn btn-outline-danger btn-sm" (click)="deleteLibro(libro.Id_Libro)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

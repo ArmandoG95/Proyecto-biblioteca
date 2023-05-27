@@ -1,0 +1,29 @@
+
+<div class="content"></div>
+<div class="col-md-4">
+    
+    <div class="card text-white bg-secondary mb-3">
+        <h2 class="card-header text-center">Inicio de sesión</h2>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <input type="email" name="username" [(ngModel)]="usuario.Usuario" placeholder="Username"
+                        class="form-control" autofocus>
+                </div>
+                <br>
+                <div>
+                    <input type="password" name="password" [(ngModel)]="usuario.password" placeholder="Password"
+                        class="form-control">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary" (click)="login()">Login</button>
+            </form>
+            <br>
+            <div *ngIf="success" class="alert alert-success">Inicio de sesión exitoso.</div>
+            <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+        </div>
+    </div>
+</div>
+<video id="Video" autoplay muted loop>
+    <source src="assets/videos/video.mp4" type="video/mp4">>
+</video>

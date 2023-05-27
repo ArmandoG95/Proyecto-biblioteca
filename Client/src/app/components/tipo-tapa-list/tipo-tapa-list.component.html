@@ -1,0 +1,23 @@
+<h2>Lista de tapas</h2>
+<ul class="list-group">
+
+    <li class="list-group-item" *ngFor="let tipo_tapa of tipo_tapas">
+      <div class="row align-items-center">
+        <div class="col-10">
+          <h4 class="mb-0">{{tipo_tapa.Tipo_Tapa}}</h4>
+          <small>ID: {{tipo_tapa.id_tipo_tapa}}</small>
+        </div>
+        <div class="col-2">
+          <a class="btn btn-secondary btn-sm" [routerLink]="['/Tipos_Tapas/edit/',tipo_tapa.id_tipo_tapa]">Editar</a>
+          | <button type="button"  class="btn btn-danger btn-sm" (click)="deleteTipo_Tapa(tipo_tapa.id_tipo_tapa)">
+            Eliminar
+          </button>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <div>
+    <br>
+    <a class="btn btn-primary" routerLink="/Tipos_Tapas/add">Agregar Tapa</a>
+
+</div>

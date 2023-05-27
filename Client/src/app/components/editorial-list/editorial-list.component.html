@@ -1,0 +1,27 @@
+<br>
+
+<h2 class="text-center">Editoriales</h2>
+
+<p><a class="btn btn-outline-primary btn-sm" routerLink="/editoriales/add" routerLinkActive="Active">Nueva editorial</a></p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Editorial</th>
+            <th>Sede central</th>
+            <th>Fundador</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-light" *ngFor="let editorial of editoriales">
+        <tr>
+            <td>{{editorial.Editorial}}</td>
+            <td>{{editorial.Sede_Central}}</td>
+            <td>{{editorial.Fundador}}</td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm" [routerLink]="['/editoriales/edit',editorial.Id_Editorial]">Editar</a> |
+                <button class="btn btn-outline-danger btn-sm" (click)="deleteEditorial(editorial.Id_Editorial)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,42 @@
+<div class="col-md-4-offset-md-2">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <p>Nombre: </p>
+                <div class="form-group">
+                    <input type="text" name="Nombre" [(ngModel)]="autor.Nombre" placeholder="Enter Nombre" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Apellido Paterno: </p>
+                <div class="form-group">
+                    <input type="text" name="Apellidp_Paterno" [(ngModel)]="autor.Apellidp_Paterno" placeholder="Enter Apellido paterno" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Apellido Materno: </p>
+                <div class="form-group">
+                    <input type="text" name="Apellido_Materno" [(ngModel)]="autor.Apellido_Materno" placeholder="Enter Apellido Materno:" class="form-control" autofocus>
+                </div>
+                <br>
+                <p>Pseudonimo: </p>
+                <div class="form-group">
+                    <input type="text" name="Pseudonimo" [(ngModel)]="autor.Pseudonimo" placeholder="Enter Pseudonimo:" class="form-control" autofocus>
+                </div>
+                <br>
+                <div class="form-group">
+                    <p>Nacionalidad: </p>
+                    <select name="Id_Nacionalidad" [(ngModel)]="autor.Id_Nacionalidad" >
+                        <option *ngFor="let nacionalidad of nacionalidades" value={{nacionalidad.Id_Nacionalidad}}>
+                            {{nacionalidad.Nacionalidad}}
+                        </option>
+                    </select>
+                </div>
+                <br>
+                <button class="btn btn-success btn-block" (click)="edit? update(): saveNewAutor()" routerLink="/Autores">Save</button>
+            </form>
+        </div>
+    </div>    
+</div>
+<div class="col-md-4">
+    <div class="card card-body text-center">
+    </div>
+</div>

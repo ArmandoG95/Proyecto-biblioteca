@@ -1,0 +1,112 @@
+<h2 class="text-center" style="color: antiquewhite;">Libros</h2>
+
+<p><a class="btn btn-light btn-sm" routerLink="/libros2/add" routerLinkActive="Active">Nuevo libro</a></p>
+
+<video id="Video" autoplay muted loop>
+  <source src="assets/videos/video.mp4" type="video/mp4">>
+</video>
+<div class="content"> </div>
+<div class="row">
+  <div class="col-md-4" *ngFor="let libro2 of libros2">
+    <div class="card">
+        <img src="{{libro2.Imagen}}" alt="" class="card-img-top img-thumbnail" style="max-height: 350px; width: auto;">
+      <!--<img src="{{libro2.Imagen}}" alt="" class="card-img-top img-thumbnail" style="max-height: 200px;">-->
+      <div class="card-body">
+        <h5 class="card-title">Libro: {{libro2.Nombre_Libro}}</h5>
+        <p class="card-text">Autor: {{libro2.Nombre}} {{libro2.Apellidp_Paterno}}</p>
+        <p class="card-text">Editorial: {{libro2.Editorial}}</p>
+        <p class="card-text">Genero: {{libro2.Genero_Literario}}, Tapa: {{libro2.Tipo_Tapa}}</p>
+        <a class="btn btn-outline-primary btn-sm" [routerLink]="['/libros2/edit', libro2.Id_Libro]">Editar</a>
+        <button class="btn btn-outline-danger btn-sm" (click)="deleteLibro(libro2.Id_Libro)">Eliminar</button>
+      </div>
+      <style>
+        .img-thumbnail:hover {
+          transform: scale(1.2);
+        }
+      </style>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<!--<h2 class="text-center">Libros</h2>
+
+<p><a class="btn btn-outline-primary btn-sm" routerLink="/libros2/add" routerLinkActive="Active">Nuevo libro</a></p>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Libro</th>
+      <th>Autor</th>
+      <th>Editorial</th>
+      <th>Edición</th>
+      <th>Genero literario</th>
+      <th>Tipo de tapa</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody class="table-light" *ngFor="let libro2 of libros2">
+    <tr>
+      <td>{{libro2.Nombre_Libro}}</td>
+      <td>{{libro2.Nombre}}</td>
+      <td>{{libro2.Editorial}}</td>
+      <td>{{libro2.Edicion}}</td>
+      <td>{{libro2.Genero_Literario}}</td>
+      <td>{{libro2.Tipo_Tapa}}</td>
+      <td>
+        <a class="btn btn-outline-primary btn-sm" [routerLink]="['/libros2/edit', libro2.Id_Libro]">Editar</a> |
+        <button class="btn btn-outline-danger btn-sm" (click)="deleteLibro(libro2.Id_Libro)">Eliminar</button>
+      </td>
+      <td>
+        <img src="{{libro2.Imagen}}" alt="" class="img-thumbnail" style="max-width: 150px;">
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  .img-thumbnail:hover {
+    transform: scale(1.2);
+  }
+</style>-->
+
+
+
+ 
+<!--<h2 class="text-center">Libros</h2>
+
+<p><a class="btn btn-outline-primary btn-sm" routerLink="/libros2/add" routerLinkActive="Active">Nuevo libro</a></p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Libro</th>
+            <th>Autor</th>
+            <th>Editorial</th>
+            <th>Edición</th>
+            <th>Genero literario</th>
+            <th>Tipo de tapa</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-light" *ngFor="let libro2 of libros2">
+        <tr>
+            <td>{{libro2.Nombre_Libro}}</td>
+            <td>{{libro2.Nombre}}</td>
+            <td>{{libro2.Editorial}}</td>
+            <td>{{libro2.Edicion}}</td>
+            <td>{{libro2.Genero_Literario}}</td>
+            <td>{{libro2.Tipo_Tapa}}</td>
+            <img src="{{libro2.Imagen}}" alt="" class="img-thumbnail" style="max-width: 150px;">
+            <td>
+                <a class="btn btn-outline-primary btn-sm" [routerLink]="['/libros2/edit', libro2.Id_Libro]">Editar</a> |
+                <button class="btn btn-outline-danger btn-sm" (click)="deleteLibro(libro2.Id_Libro)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>-->

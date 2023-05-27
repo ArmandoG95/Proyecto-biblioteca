@@ -1,0 +1,22 @@
+<div class="container">
+  
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">{{edit ? 'Editar' : 'Agregar'}} Tipo de Tapa</h4>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="edit ? updateTipo_Tapa() : saveNewTipo_Tapa()" #tipoTapaForm="ngForm">
+              <div class="form-group">
+                <label for="Tipo_Tapa">Tipo de Tapa</label>
+                <input type="text" class="form-control" id="Tipo_Tapa" name="Tipo_Tapa" [(ngModel)]="tipo_tapa.Tipo_Tapa" required>
+              </div>
+              <button type="submit" class="btn btn-outline-success btn-sm">{{ edit ? 'Editar' : 'Agregar'}}</button> | 
+              <a [routerLink]="['/Tipos_Tapas']" class="btn btn-outline-danger btn-sm">Cancelar</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

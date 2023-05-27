@@ -1,0 +1,23 @@
+<br>
+
+<h2 class="text-center">Lenguajes</h2>
+
+<p><a class="btn btn-outline-primary btn-sm" routerLink="/lenguajes/add" routerLinkActive="Active">Nuevo lenguaje</a></p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Lenguaje</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-light" *ngFor="let lenguaje of lenguajes">
+        <tr>
+            <td>{{lenguaje.Lenguaje}}</td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm" [routerLink]="['/lenguajes/edit',lenguaje.Id_Lenguaje]">Editar</a> |
+                <button class="btn btn-outline-danger btn-sm" (click)="deleteLenguaje(lenguaje.Id_Lenguaje)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,43 @@
+<div class="col-md-4">
+    <div class="card text-white bg-secondary mb-3">
+        <h2 class="card-header text-center">Premio</h2>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Premio</label>
+                    <input class="form-control" type="text" name="Premio"  placeholder="Ingresar el premio" [(ngModel)]="premio.Premio" />
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Categoría del premio</label>
+                    <input class="form-control" type="text" name="Premio_Categoria"  placeholder="Ingresar la categoría del premio" [(ngModel)]="premio.Premio_Categoria" />
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Otorgado</label>
+                    <input class="form-control" type="text" name="Otorgado_Por"  placeholder="Ingresar quien otorga el premio" [(ngModel)]="premio.Otorgado_Por" />
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Primera entrega</label>
+                    <input class="form-control" type="date" name="Primera_Entrega"  placeholder="Ingresar la primera entrega" [(ngModel)]="premio.Primera_Entrega" />
+                </div>
+
+                <div class="form-group">
+                    <p>Lugar de entrega</p>
+                    <select name="Id_Lugar" [(ngModel)]="premio.Id_Lugar" >
+                        <option *ngFor="let lugar of lugares" value={{lugar.Id_Lugar}}>
+                            {{lugar.Lugar}}
+                        </option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <br>
+                    <button class="btn btn-outline-success btn-sm" (click)="edit? update(): saveNewPremio()" routerLink="/premios">Guardar</button> |
+                    <a class="btn btn-outline-danger btn-sm" routerLink="/premios" routerLinkActive="Active">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="col-md-4">
+    <div class="card text-white bg-secondary mb-3">
+        <h2 class="card-header text-center">Lenguaje</h2>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Lenguaje</label>
+                    <input class="form-control" type="text" name="lenguaje.Lenguaje"  placeholder="Ingresar el lenguaje" [(ngModel)]="lenguaje.Lenguaje" />
+                </div>
+                <div class="form-group">
+                    <br>
+                    <button class="btn btn-outline-success btn-sm" (click)="edit? updateLenguaje(): saveNewLenguaje()">Guardar</button> |
+                    <a class="btn btn-outline-danger btn-sm" routerLink="/lenguajes" routerLinkActive="Active">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="card text-white bg-secondary mb-3" style="max-width: 40rem;" >
+    <div class="card-header">Información del libro</div>
+    <div class="card-body" >
+        <h4 class="card-title text-center">{{libro.Nombre_Libro}}</h4>
+        <br>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="card-text">
+                    <h5>Autor</h5>
+                    <p>{{libro.Nombre}}</p>
+                </div>
+                <div class="card-text">
+                    <h5>Editorial</h5>
+                    <p>{{libro.Editorial}}</p>
+                </div>
+                <div class="card-text">
+                    <h5>Genero literario</h5>
+                    <p>{{libro.Genero_Literario}}</p>
+                </div>
+                <div class="card-text">
+                    <h5>Tipo de tapa</h5>
+                    <p>{{libro.Tipo_Tapa}}</p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card-text">
+                    <h5>Número de páginas</h5>
+                    <p>{{libro.Numero_Paginas}}</p>
+                </div>
+                <div class="card-text">
+                    <h5>Fecha de publación</h5>
+                    <p>{{libro.Fecha_Publicacion}}</p>
+                </div>
+                <div class="card-text">
+                    <h5>ISBN</h5>
+                    <p>ISBN {{libro.isbn}}</p>
+                </div>
+                <div>
+                    <h5>Sinopsis</h5>
+                    <p class="card-text">Sinopsis {{libro.Sinopsis}}</p>
+                </div>
+            </div>
+        </div>
+        <a class="btn btn-outline-warning btn-sm" routerLink="/libros" routerLinkActive="Active">Regresar</a>
+    </div>
+    
+</div>

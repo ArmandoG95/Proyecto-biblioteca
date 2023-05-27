@@ -1,0 +1,31 @@
+<br>
+
+<h2 class="text-center">Premios</h2>
+
+<p><a class="btn btn-outline-primary btn-sm" routerLink="/premios/add" routerLinkActive="Active">Nuevo premio</a></p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Premio</th>
+            <th>Premio categoría</th>
+            <th>Otorgado por</th>
+            <th>Primera entrega</th>
+            <th>Lugar de entrega</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-light" *ngFor="let premio of premios">
+        <tr>
+            <td>{{premio.Premio}}</td>
+            <td>{{premio.Premio_Categoria}}</td>
+            <td>{{premio.Otorgado_Por}}</td>
+            <td>{{premio.Primera_Entrega}}</td>
+            <td>{{premio.Lugar}}</td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm" [routerLink]="['/premios/edit',premio.Id_Premio]">Editar</a> |
+                <button class="btn btn-outline-danger btn-sm" (click)="delete(premio.Id_Premio)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="mb-4">Lista de géneros literarios</h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Género literario</th>
+              <th>Estilo literario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let genero of genero_literario">
+              <td>{{ genero.Id_Genero_Literario }}</td>
+              <td>{{ genero.Genero_Literario }}</td>
+              <td>{{ genero.Estilo_Literario }}</td>
+              <td>
+                <a class="btn btn-primary btn-sm mr-2" [routerLink]="['/GenerosLiterarios/edit/', genero.Id_Genero_Literario]">Editar</a>
+                <button class="btn btn-danger btn-sm" (click)="deleteGenero_LiterarioL(genero.Id_Genero_Literario)">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+          <br>
+          <a class="btn btn-primary" routerLink="/GenerosLiterarios/add">Agregar género literario</a>
+        </table>
+      </div>
+    </div>
+  </div>

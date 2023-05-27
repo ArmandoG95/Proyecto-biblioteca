@@ -1,0 +1,29 @@
+<div class="col-md-4">
+    <div class="card text-white bg-secondary mb-3">
+        <h2 class="card-header text-center">Editorial</h2>
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Editorial</label>
+                    <input class="form-control" type="text" name="editorial.Editorial"  placeholder="Ingresar la editorial" [(ngModel)]="editorial.Editorial" />
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Sede central</label>
+                    <input class="form-control" type="text" name="editorial.Sede_Central"  placeholder="Ingresar la sede central" [(ngModel)]="editorial.Sede_Central" />
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label col-form-label-lg mt-4" for="inputLarge">Fundador</label>
+                    <input class="form-control" type="text" name="editorial.Fundador"  placeholder="Ingresar el fundador" [(ngModel)]="editorial.Fundador" />
+                </div>
+
+                <div class="form-group">
+                    <br>
+                    <button class="btn btn-outline-success btn-sm" (click)="edit? updateEditorial(): saveNewEditorial()">Guardar</button> |
+                    <a class="btn btn-outline-danger btn-sm" routerLink="/editoriales" routerLinkActive="Active">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

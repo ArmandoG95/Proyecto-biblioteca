@@ -1,0 +1,23 @@
+<br>
+
+<h2 class="text-center">Estilos Literarios</h2>
+
+<p><a class="btn btn-outline-primary btn-sm" routerLink="/EstilosLiterarios/add" routerLinkActive="Active">Nuevo Estilo</a></p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Estilo Literario</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="table-light" *ngFor="let estiloLiterario of estilosLiterarios">
+        <tr>
+            <td>{{estiloLiterario.Estilo_Literario}}</td>
+            <td>
+                <a class="btn btn-outline-primary btn-sm" [routerLink]="['/EstilosLiterarios/edit/', estiloLiterario.Id_Estilo_Literario]">Editar</a> |
+                <button class="btn btn-outline-danger btn-sm" (click)="delete(estiloLiterario.Id_Estilo_Literario)">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

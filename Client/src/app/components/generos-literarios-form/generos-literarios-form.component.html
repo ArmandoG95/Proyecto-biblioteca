@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-header">
+            <h4>{{edit ? 'Editar' : 'Agregar'}} género literario</h4>
+          </div>
+          <div class="card-body">
+            <form (ngSubmit)="edit ? updateGenero_LiterarioF() : saveNewGenero_Literario()" #generoForm="ngForm">
+              <div class="form-group">
+                <label for="genero">Género literario</label>
+                <input type="text" class="form-control" [(ngModel)]="genero_literario.Genero_Literario" name="genero" id="genero" required>
+              </div>
+              <br>
+              <div class="form-group">
+                <p>Estilos literarios: </p>
+                <select name="Id_Estilo_Literario" [(ngModel)]="genero_literario.Id_Estilo_Literario" >
+                    <option *ngFor="let estilo of estilos" value={{estilo.Id_Estilo_Literario}}>
+                        {{estilo.Estilo_Literario}}
+                    </option>
+                </select>
+            </div>
+            <br>
+              <div class="form-group">
+                <button class="btn btn-primary" type="submit">{{edit ? 'Guardar cambios' : 'Guardar'}}</button>
+                <a class="btn btn-secondary" routerLink="/GenerosLiterarios">Cancelar</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
